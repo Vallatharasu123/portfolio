@@ -4,7 +4,7 @@ import { faDownload, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const playSound = () => {
-    const audio = new Audio('/sound.wav');
+    const audio = new Audio('/soundClick.wav');
     audio.play();
   };
 
@@ -23,12 +23,8 @@ const Home = () => {
           "I weave dreams with code, crafting digital worlds where imagination meets functionality. In the realm of web development, I am both architect and artist, shaping the online landscape one line of code at a time."
         </p>
        <div className="flex gap-10 justify-center">
-       <button className="bg-white hover:bg-violet-700 hover:text-white text-violet-600 font-bold py-2 px-4 shadow-lg rounded">
-        
-          <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
-          Hire Me
-        </button>
-        <button className="bg-white hover:bg-violet-700 hover:text-white text-violet-600 font-bold py-2 px-4 shadow-lg rounded">
+      
+        <button className="bg-violet-700 text-white hover:bg-white hover:text-violet-700 border-2 border-transparent hover:border-violet-700 text-violet-600 font-bold py-2 px-4 shadow-lg shadow-violet-600/50 rounded">
           <FontAwesomeIcon icon={faDownload} className="mr-2 animate-bounce" />
          Resume
         </button>

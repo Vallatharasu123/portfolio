@@ -7,14 +7,14 @@ const Topbar = () => {
     setIsOpen(!isOpen);
   };
   const playSound = () => {
-    const audio = new Audio('/sound.wav');
+    const audio = new Audio('/soundClick.wav');
     audio.play();
   };
   return (
     <div className=" ease-in bg-white text-dark sm:sticky top-0 z-10">
       <div className="flex justify-between items-center px-4 py-3">
         <div>
-          <h1 className="text-xl font-bold"><span className="text-violet-600">V</span>allatharasu <span className="text-violet-600">K</span>atturaja</h1>
+          <h1 className="text-xxl font-bold"><span className="text-violet-600">V</span>allatharasu <span className="text-violet-600">K</span>atturaja</h1>
         </div>
         <div className="lg:hidden ease-in">
           <button
