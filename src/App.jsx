@@ -1,7 +1,9 @@
-import About from './About/About'
+import About from './Education/Education'
 import './App.css'
+import Experinece from './Experience/Experinece'
 import Topbar from './Topbar/Topbar'
 import Home from './home/Home'
+import Education from './Education/Education'
 
 function App() {
 
@@ -10,7 +12,8 @@ function App() {
     <>
      <Topbar />
      <Home />
-     <About />
+     <Education />
+     <Experinece />
     </>
   )
 }
