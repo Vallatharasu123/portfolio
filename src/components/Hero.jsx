@@ -216,14 +216,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 backdrop-blur-md"
+              className="flex items-center gap-3"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tide-400 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-tide-400" />
-              </span>
-              <span className="text-xs font-medium tracking-wide text-white/70">
-                Open to opportunities · SofTurn Technologies
+              <span className="h-px w-10 bg-gradient-to-r from-white/70 to-transparent" />
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-white">
+                Hello, I&apos;m
               </span>
             </motion.div>
 
@@ -240,25 +237,31 @@ export default function Hero() {
                 </motion.span>
               </span>
               <span className="block overflow-hidden">
-                <motion.span className="inline-block text-tide-400" variants={wordChild}>
+                <motion.span
+                  className="inline-block text-tide-400"
+                  variants={wordChild}
+                >
                   Katturaja
                 </motion.span>
               </span>
             </motion.h1>
 
-            <div className="mt-5 h-9 sm:h-10 overflow-hidden relative">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={roles[roleIndex]}
-                  initial={{ y: 28, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -28, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-lg sm:text-xl text-copper-400 font-semibold absolute inset-x-0"
-                >
-                  {roles[roleIndex]}
-                </motion.p>
-              </AnimatePresence>
+            <div className="mt-5 flex items-center gap-3">
+              <span className="h-1.5 w-1.5 rotate-45 bg-copper-400 shrink-0" />
+              <div className="h-8 sm:h-9 overflow-hidden relative flex-1">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={roles[roleIndex]}
+                    initial={{ y: 28, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -28, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-lg sm:text-xl text-copper-400 font-semibold absolute inset-x-0"
+                  >
+                    {roles[roleIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
             </div>
 
             <motion.p
@@ -297,12 +300,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-10 flex flex-wrap gap-6 sm:gap-8"
+              className="mt-12 flex items-center gap-5 sm:gap-8"
             >
-              {metrics.map((m) => (
-                <div key={m.label} className="min-w-[5.5rem]">
-                  <p className="font-display text-2xl sm:text-3xl font-700 text-white">{m.value}</p>
-                  <p className="text-xs text-white/45 mt-1 tracking-wide uppercase">{m.label}</p>
+              {metrics.map((m, i) => (
+                <div key={m.label} className="flex items-center gap-5 sm:gap-8">
+                  {i > 0 && <span className="h-8 w-px bg-white/10" />}
+                  <div>
+                    <p className="font-display text-2xl sm:text-3xl font-700 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
+                      {m.value}
+                    </p>
+                    <p className="text-[11px] text-white/45 mt-1 tracking-[0.12em] uppercase">
+                      {m.label}
+                    </p>
+                  </div>
                 </div>
               ))}
             </motion.div>

@@ -36,25 +36,24 @@ export default function Philosophy() {
           transition={{ duration: 0.55, delay: 0.1 }}
           className="lift-panel rounded-2xl border border-ink-800/10 bg-gradient-to-br from-ink-900 to-ink-800 text-white p-7 sm:p-9 shadow-[0_24px_60px_-30px_rgba(15,28,31,0.55)]"
         >
-          <p className="section-label text-tide-400">Looking for</p>
+          <p className="section-label text-tide-400">Open to work</p>
           <h2 className="font-display text-2xl sm:text-3xl font-700 mt-3 mb-5 leading-tight">
-            Roles where craft meets business impact.
+            Developer roles where I can build and ship real software.
           </h2>
           <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-            Open to opportunities in Flutter development, full stack / Laravel work, business and
-            enterprise software, AI-powered products, and product engineering. I do my best work
-            with teams that value learning, clean code, and software that creates measurable
-            outcomes.
+            I&apos;m looking for hands-on developer roles — Flutter, full stack, and Laravel
+            work where I get to write code, solve real problems, and ship features that people
+            actually use. I do my best work on teams that value clean code, learning, and
+            well-built software.
           </p>
           <ul className="mt-6 flex flex-wrap gap-2">
             {[
-              "Flutter",
-              "Full Stack",
-              "Laravel",
-              "Business software",
-              "Enterprise apps",
-              "AI solutions",
-              "Product engineering",
+              "Flutter Developer",
+              "Full Stack Developer",
+              "Laravel Developer",
+              "Backend Developer",
+              "Mobile App Developer",
+              "AI-assisted apps",
             ].map((item) => (
               <li
                 key={item}
