@@ -76,11 +76,15 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
+    const MAX_WITH_SOUND = 2;
+    let playCount = 0;
+    let mutedByCount = false;
+
+    video.loop = false;
     video.muted = false;
     video.volume = 1;
 
-    const tryPlayWithSound = () => {
-      video.muted = false;
+    const tryPlay = () => {
       const attempt = video.play();
       if (attempt && typeof attempt.catch === "function") {
         attempt.catch(() => {
@@ -90,11 +94,28 @@ export default function Hero() {
       }
     };
 
+    const onEnded = () => {
+      playCount += 1;
+      if (playCount < MAX_WITH_SOUND && !mutedByCount) {
+        video.currentTime = 0;
+        tryPlay();
+      } else {
+        // After two plays, switch to silent looping
+        mutedByCount = true;
+        video.muted = true;
+        video.loop = true;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
     const unmuteOnInteraction = () => {
       soundEnabledRef.current = true;
-      video.muted = false;
-      video.volume = 1;
-      video.play().catch(() => {});
+      if (!mutedByCount) {
+        video.muted = false;
+        video.volume = 1;
+        video.play().catch(() => {});
+      }
       removeListeners();
     };
 
@@ -105,12 +126,16 @@ export default function Hero() {
       );
     };
 
-    tryPlayWithSound();
+    video.addEventListener("ended", onEnded);
+    tryPlay();
     events.forEach((evt) =>
       window.addEventListener(evt, unmuteOnInteraction, { once: true, passive: true })
     );
 
-    return removeListeners;
+    return () => {
+      video.removeEventListener("ended", onEnded);
+      removeListeners();
+    };
   }, []);
 
   useEffect(() => {
@@ -122,10 +147,6 @@ export default function Hero() {
       ([entry]) => {
         const inView = entry.isIntersecting && entry.intersectionRatio > 0.35;
         if (inView) {
-          if (soundEnabledRef.current) {
-            video.muted = false;
-            video.volume = 1;
-          }
           video.play().catch(() => {});
         } else {
           video.muted = true;
@@ -344,27 +365,6 @@ export default function Hero() {
                   <div className="portrait-shine" />
                 </motion.div>
 
-                <motion.button
-                  type="button"
-                  onClick={toggleSound}
-                  aria-label={isMuted ? "Enable audio" : "Mute audio"}
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.94 }}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1, duration: 0.4 }}
-                  className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 z-30 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-white/25 bg-ink-900/85 text-white backdrop-blur-md shadow-[0_10px_30px_-8px_rgba(0,0,0,0.6)] hover:bg-tide-500 hover:border-tide-400 transition-colors"
-                  style={{ transform: "translateZ(80px)" }}
-                >
-                  {isMuted && (
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-tide-400/40 animate-ping" />
-                  )}
-                  <FontAwesomeIcon
-                    icon={isMuted ? faVolumeXmark : faVolumeHigh}
-                    className="relative text-base sm:text-lg"
-                  />
-                </motion.button>
-
                 <div
                   className="absolute left-1/2 -translate-x-1/2 bottom-[-18%] w-[72%] h-9 rounded-[100%] bg-black/45 blur-xl"
                   style={{ transform: "translateZ(-36px)" }}
@@ -396,6 +396,26 @@ export default function Hero() {
                   </motion.div>
                 ))}
               </motion.div>
+
+              <motion.button
+                type="button"
+                onClick={toggleSound}
+                aria-label={isMuted ? "Enable audio" : "Mute audio"}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.94 }}
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, duration: 0.4 }}
+                className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 z-40 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-white/25 bg-ink-900/90 text-white backdrop-blur-md shadow-[0_10px_30px_-8px_rgba(0,0,0,0.6)] hover:bg-tide-500 hover:border-tide-400 transition-colors"
+              >
+                {isMuted && (
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-tide-400/40 animate-ping" />
+                )}
+                <FontAwesomeIcon
+                  icon={isMuted ? faVolumeXmark : faVolumeHigh}
+                  className="relative text-base sm:text-lg"
+                />
+              </motion.button>
             </div>
           </div>
         </div>
