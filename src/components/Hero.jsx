@@ -20,14 +20,14 @@ const floatChips = [
 ];
 
 const metrics = [
-  { value: "2+", label: "Years shipping" },
+  { value: "2+", label: "Years Experience" },
   { value: "3", label: "Platforms" },
   { value: "10+", label: "Business modules" },
 ];
 
 const wordReveal = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } }, 
 };
 
 const wordChild = {
