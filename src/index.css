@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply font-body text-ink-900 bg-mist-50 antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    letter-spacing: -0.011em;
+  }
+
+  ::selection {
+    @apply bg-tide-500/30 text-ink-950;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-5 sm:px-8 lg:px-12 py-20 sm:py-28;
+  }
+
+  .section-label {
+    @apply font-body text-xs sm:text-sm tracking-[0.2em] uppercase text-tide-600 font-semibold;
+  }
+
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-700 text-ink-900 mt-3 mb-5 leading-[1.15] tracking-tight;
+  }
+
+  .section-lead {
+    @apply text-ink-700/80 text-base sm:text-lg max-w-2xl leading-relaxed;
+  }
+
+  .accent-line {
+    @apply w-12 h-0.5 bg-copper-500 mb-4;
+  }
+
+  .skill-pill {
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium text-ink-800 bg-white/70 border border-ink-800/10 rounded-md transition-colors duration-200 hover:border-tide-500/40 hover:bg-tide-500/5;
+  }
+
+  .project-link {
+    @apply block relative overflow-hidden border-b border-ink-800/10 py-8 sm:py-10 transition-colors;
+  }
+
+  .project-link:hover {
+    @apply border-tide-500/30;
+  }
+}
+
+@layer utilities {
+  .font-700 {
+    font-weight: 700;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
