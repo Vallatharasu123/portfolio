@@ -1,0 +1,23 @@
+{
+  "name": "Vallatharasu Katturaja — Developer Portfolio",
+  "short_name": "Vallatharasu",
+  "description": "Junior Full Stack, Flutter & Laravel Developer portfolio — POS, inventory, APIs, and AI research.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1c1f",
+  "theme_color": "#0f1c1f",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/vallatharasu_katturaja.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/vallatharasu_katturaja.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

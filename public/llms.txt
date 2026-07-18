@@ -1,0 +1,45 @@
+# Vallatharasu Katturaja
+
+> Junior Full Stack Developer | Flutter Developer | Laravel Developer | AI Research Enthusiast
+
+## Summary
+
+Vallatharasu Katturaja is a Junior Full Stack Developer with over two years of experience building practical business software. He develops Flutter mobile and desktop applications, Laravel backends, REST APIs, POS systems, inventory and delivery management software, and explores AI / LLMs for real business workflows.
+
+## Current role
+
+- Junior Full Stack Developer at SofTurn Technologies (2024 – Present)
+- Platforms: Android, Windows, Web
+- Focus: Flutter apps, Laravel APIs, SQL databases, POS, payments, thermal printers, deployment
+
+## Skills
+
+- Languages: PHP, JavaScript, Dart, HTML5, CSS3, SQL
+- Frontend: Flutter, React, Bootstrap, Tailwind CSS, jQuery
+- Backend: Laravel, Node.js, Express.js, REST APIs, authentication
+- Databases: MySQL, MongoDB, SQLite, Microsoft SQL Server
+- AI: Prompt engineering, Large Language Models, automation
+
+## Projects
+
+- POS Management System — billing, inventory, customers, thermal printers, payments, reporting
+- Inventory Management System — products, purchases, stock, suppliers, warehouses, analytics
+- Delivery Management System — order assignment, tracking, status workflows
+- Self Ordering Platform — QR-based customer ordering
+- Business Automation Tools — reduce repetitive operational work
+
+## Education
+
+- M.Tech (Computer Science and Engineering) — Bharathidasan University
+
+## Open to work
+
+Flutter Developer, Full Stack Developer, Laravel Developer, Backend Developer, Mobile App Developer, AI-assisted apps.
+
+## Contact
+
+- Portfolio: https://vallatharasu123.github.io/portfolio/
+- LinkedIn: https://www.linkedin.com/in/vallatharasu-katturaja-20753322a/
+- GitHub: https://github.com/Vallatharasu123
+- Phone / WhatsApp: +91 70943 76344
+- Resume: https://vallatharasu123.github.io/portfolio/Vallatharasu_Katturaja_Resume.pdf

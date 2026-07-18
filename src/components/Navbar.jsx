@@ -90,6 +90,8 @@ export default function Navbar() {
 
         <a
           href="/Vallatharasu_Katturaja_Resume.pdf"
+          download="Vallatharasu_Katturaja_Resume.pdf"
+          aria-label="Download Vallatharasu Katturaja resume PDF"
           className="hidden lg:inline-flex items-center gap-2 text-[13px] font-semibold pl-4 pr-3 py-2 rounded-full bg-white text-ink-900 hover:bg-tide-400 hover:text-white transition-colors group shrink-0"
         >
           Resume
@@ -145,6 +147,8 @@ export default function Navbar() {
               <li className="pt-1">
                 <a
                   href="/Vallatharasu_Katturaja_Resume.pdf"
+                  download="Vallatharasu_Katturaja_Resume.pdf"
+                  aria-label="Download Vallatharasu Katturaja resume PDF"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold bg-white text-ink-900"
                 >

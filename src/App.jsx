@@ -20,7 +20,13 @@ function App() {
     <>
       <ScrollProgress />
       <Navbar />
-      <main>
+      <main id="main-content" itemScope itemType="https://schema.org/Person">
+        <meta itemProp="name" content="Vallatharasu Katturaja" />
+        <meta itemProp="jobTitle" content="Junior Full Stack Developer" />
+        <meta
+          itemProp="description"
+          content="Junior Full Stack Developer specializing in Flutter, Laravel, POS systems, and AI-assisted business software."
+        />
         <Hero />
         <TechMarquee />
         <About />

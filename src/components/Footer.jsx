@@ -65,6 +65,8 @@ export default function Footer() {
             </MagneticButton>
             <MagneticButton
               href="/Vallatharasu_Katturaja_Resume.pdf"
+              download="Vallatharasu_Katturaja_Resume.pdf"
+              aria-label="Download Vallatharasu Katturaja resume PDF"
               className="inline-flex items-center gap-3 px-5 py-3 rounded-md border border-white/20 hover:bg-white/10 transition-colors font-semibold"
             >
               <FontAwesomeIcon icon={faEnvelope} />

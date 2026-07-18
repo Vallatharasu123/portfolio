@@ -289,6 +289,8 @@ export default function Hero() {
               </MagneticButton>
               <MagneticButton
                 href="/Vallatharasu_Katturaja_Resume.pdf"
+                download="Vallatharasu_Katturaja_Resume.pdf"
+                aria-label="Download Vallatharasu Katturaja resume PDF"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-white/25 text-white font-semibold hover:bg-white/10 transition-colors"
               >
                 <FontAwesomeIcon icon={faDownload} className="text-sm" />
